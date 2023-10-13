@@ -17,7 +17,7 @@ pipeline {
                     // Authenticate with Docker Hub using the specified credentials
                     docker.withRegistry('https://registry.hub.docker.com/', 'dockerhub-credentials') {
                         // Build the Docker image
-                        def appImage = docker.build("your_dockerhub_username/your-image-name:${env.BUILD_ID}")
+                        def appImage = docker.build("donpk/py-webapp:${env.BUILD_ID}")
 
                         // Push the image to Docker Hub
                         appImage.push()
