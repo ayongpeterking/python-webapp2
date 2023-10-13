@@ -21,6 +21,9 @@ pipeline {
 
                         // Push the image to Docker Hub
                         appImage.push()
+
+                        // Tag the same image as 'latest'
+                        appImage.push('latest')
     }
 }
             }
